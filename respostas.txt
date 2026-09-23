@@ -1,0 +1,80 @@
+ATIVIDADE AVALIATIVA 1
+
+Autor: Henry Phietro Aguiar da Silva
+Matrícula: 20250031933
+E-mail: henry.silva@aluno.uepa.br
+GitHub: https://github.com/EduPhietro/ContaBancaria.git
+
+
+1. Quais classes foram criadas no programa?
+
+R: As classes criadas na atividade foram, respectivamente: ContaBancaria,
+Main e TransferenciaService.
+
+A classe ContaBancaria pertence à camada de modelo (Model) e representa
+uma entidade do sistema bancário.
+
+A classe Main é a classe principal de execução e representa o ponto de
+entrada da aplicação.
+
+A classe TransferenciaService pertence à camada de serviço (Service) e é
+responsável por separar a regra de negócio relacionada à transferência de
+valores monetários entre objetos do tipo ContaBancaria.
+
+
+2. Quantos objetos da classe ContaBancaria foram criados?
+
+R: Foram criados dois objetos da classe ContaBancaria diretamente no
+método main:
+
+- joaoSilva;
+- joanaDarc.
+
+Esses objetos foram instanciados de forma hard coded na classe Main.
+
+
+3. Quais são os atributos da classe ContaBancaria?
+
+R: Os atributos são:
+
+- titular: do tipo String, representa o titular da conta bancária;
+
+- num: do tipo String, representa uma sequência de caracteres que
+  identifica a conta. Foi utilizado o tipo String porque o número da
+  conta pode começar com zeros, como "001";
+
+- saldo: do tipo double, representa o saldo disponível na conta bancária.
+
+
+4. Quais são os métodos da classe ContaBancaria?
+
+R: Os métodos são:
+
+- getSaldo(): método getter utilizado para obter o valor do atributo
+  privado saldo;
+
+- sacar(): método utilizado para realizar saques, desde que o valor
+  informado seja válido e exista saldo suficiente;
+
+- depositar(): método utilizado para realizar depósitos de valores
+  maiores que zero;
+
+- exibirSaldo(): método utilizado para exibir, de forma formatada, os
+  dados da conta e seu saldo atual.
+
+
+5. Qual é a diferença entre saldo e depositar()?
+
+R: saldo e depositar() representam elementos diferentes dentro da classe
+ContaBancaria.
+
+saldo é um atributo privado, responsável por armazenar o valor monetário
+disponível na conta.
+
+Já depositar() é um método responsável por executar uma operação sobre o
+objeto, validando o valor informado e adicionando-o ao atributo saldo.
+
+Em resumo:
+
+saldo       -> atributo que armazena um estado do objeto.
+depositar() -> método que executa uma operação e modifica esse estado.
