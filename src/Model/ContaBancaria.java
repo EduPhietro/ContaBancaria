@@ -1,48 +1,62 @@
 package Model;
 
 public class ContaBancaria {
-    String titular;
-    String num; // String type is used for this attribute because num can start with char 0;
+
+    private String titular;
+    private String num;
     private double saldo;
 
-    public ContaBancaria(
-            String titular,
-            String num
-    ){
+    /*
+     * O número da conta é armazenado como String,
+     * pois pode começar com zero.
+     */
+    public ContaBancaria(String titular, String num) {
         this.titular = titular;
         this.num = num;
         this.saldo = 0.0;
-
     }
 
-    // GETTER TO this.saldo
+    // Retorna o saldo atual da conta.
     public double getSaldo() {
         return this.saldo;
     }
 
-    public void depositar(double valor){
-        if (valor <=0) {
-            throw  new IllegalArgumentException("You can't deposit a negative valor");
+    // Deposita um valor na conta.
+    public void depositar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException(
+                    "O valor do depósito deve ser maior que zero."
+            );
         }
-        this.saldo  += valor;
+
+        this.saldo += valor;
     }
 
-    public  void sacar(double valor){
-        if (valor <=0) {
-            throw  new IllegalArgumentException("You can't deposit a negative valor");
+    // Realiza um saque da conta.
+    public double sacar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException(
+                    "O valor do saque deve ser maior que zero."
+            );
         }
-        if (valor>this.saldo){
-            throw new IllegalArgumentException("Your balance is insufficient");
+
+        if (valor > this.saldo) {
+            throw new IllegalArgumentException(
+                    "Saldo insuficiente."
+            );
         }
-        this.saldo  -= valor;
+
+        this.saldo -= valor;
+
+        return valor;
     }
 
-    public void exibirSaldo(){
+    // Exibe os dados da conta e o saldo atual.
+    public void exibirSaldo() {
         IO.println("======= SALDO DA CONTA =======");
         IO.println("Titular: " + this.titular);
         IO.println("Num. Conta: " + this.num);
         IO.println("Saldo: " + this.saldo);
         IO.println("==============================");
     }
-
 }
